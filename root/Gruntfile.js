@@ -4,6 +4,18 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    simplemocha: {
+      options: {
+        globals: ['should'],
+        timeout: 3000,
+        ignoreLeaks: false,
+        // grep: '*-test',
+        ui: 'bdd',
+        reporter: 'spec'
+      },
+
+      all: { src: ['test/**/*_mocha-test.js'] }
+    },
     nodeunit: {
       files: ['test/**/*_test.js'],
     },
@@ -41,8 +53,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-simple-mocha');
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'nodeunit']);
+  grunt.registerTask('default', ['jshint', 'simplemocha', 'nodeunit']);
 
 };
