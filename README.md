@@ -1,4 +1,4 @@
-# grunt-init-node
+# grunt-init-simplemocha
 
 > Create a Node.js module with [grunt-init][], including Nodeunit and simplemocha unit tests.
 
