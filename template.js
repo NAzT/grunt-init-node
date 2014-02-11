@@ -57,6 +57,8 @@ exports.template = function(grunt, init, done) {
       'grunt-contrib-nodeunit': '~0.2.0',
       'grunt-simple-mocha': "~0.4.0",
       'grunt-contrib-watch': '~0.5.3',
+      'expectations': "~0.2.5",
+      'sinon': "~1.8.1"
     };
     props.travis = /y/i.test(props.travis);
 
